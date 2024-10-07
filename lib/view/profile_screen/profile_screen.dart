@@ -1,5 +1,7 @@
 import 'package:amazon_app/main.dart';
 import 'package:amazon_app/view/DummyDB.dart';
+import 'package:amazon_app/view/profile_screen/Buyagain.dart';
+import 'package:amazon_app/view/profile_screen/yourorders.dart';
 import 'package:amazon_app/view/profile_screen/widget/custom_button.dart';
 import 'package:amazon_app/view/profile_screen/widget/profilecontainers.dart';
 import 'package:amazon_app/view/utils/constants/color_constants/colorconstants.dart';
@@ -45,7 +47,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  setState(() {});
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Yourorders(),
+                      ));
+                },
                 child: Container(
                     height: 50,
                     width: 200,
@@ -59,7 +68,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: TextStyle(color: ColorConstants.black)))),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  setState(() {});
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Buyagain(),
+                      ));
+                },
                 child: Container(
                     height: 50,
                     width: 200,
