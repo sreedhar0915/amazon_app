@@ -1,7 +1,8 @@
+import 'package:amazon_app/view/homescreen/homescreen.dart';
 import 'package:amazon_app/view/utils/constants/color_constants/colorconstants.dart';
 import 'package:flutter/material.dart';
 
-class Profilecontainers extends StatelessWidget {
+class Profilecontainers extends StatefulWidget {
   final String title;
   final String subtitle;
   final String switchname;
@@ -11,6 +12,11 @@ class Profilecontainers extends StatelessWidget {
       required this.switchname,
       super.key});
 
+  @override
+  State<Profilecontainers> createState() => _ProfilecontainersState();
+}
+
+class _ProfilecontainersState extends State<Profilecontainers> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +29,7 @@ class Profilecontainers extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              title,
+              widget.title,
               style: TextStyle(
                   color: ColorConstants.black,
                   fontWeight: FontWeight.bold,
@@ -33,13 +39,20 @@ class Profilecontainers extends StatelessWidget {
           SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(subtitle),
+            child: Text(widget.subtitle),
           ),
           SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                setState(() {});
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Homescreen(),
+                    ));
+              },
               child: Container(
                 height: 50,
                 width: double.infinity,
@@ -47,7 +60,7 @@ class Profilecontainers extends StatelessWidget {
                   border: Border.all(color: ColorConstants.grey),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(child: Text(switchname)),
+                child: Center(child: Text(widget.switchname)),
               ),
             ),
           ),

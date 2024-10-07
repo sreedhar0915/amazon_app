@@ -1,4 +1,4 @@
-import 'package:amazon_app/view/homescreen/yourorders.dart';
+import 'package:amazon_app/view/profile_screen/yourorders.dart';
 import 'package:amazon_app/view/utils/constants/color_constants/colorconstants.dart';
 import 'package:flutter/material.dart';
 
